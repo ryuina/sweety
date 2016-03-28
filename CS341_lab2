@@ -1,0 +1,35 @@
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+
+
+
+/*----------------------------------------------------
+ * getaddrinfo??
+int socket(int domain, int type, int protocol), returns socket discripter, or -1 on error
+int type : would be SOCK_STREAM
+int protocol?*/
+
+sockfd = socket();
+
+/*---------------------------------------------------
+int connect(int sockfd, struct sockaddr *serv_addr, int addrlen), 
+returns -1 on error and set the variable errno
+
+connect() uses same socket discripter sockfd that we declined above.
+so connect part would be like connect(sockfd ....);
+
+At real code, connect() is used like 
+
+if (connect(sockfd, p->ai_addr, p->ai_addrlen) == -1) {  //if result is -1, close that socket(sockfd) and do it repeatly(by for loop)//
+    close(sockfd);
+    perror("client: connect");
+    continue;
+}
+
+*/
+
+connect(sockfd, );
+
